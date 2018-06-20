@@ -1,28 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AnimBlend : MonoBehaviour {
 
     //Grabs Public animator
     public Animator anim;
+    public Slider Blender;
 
 
-    public void Scale()
+
+    public void Update()
     {
-        //Sets Blend float to Scale
-        anim.SetFloat("Blend", 1);
-    }
-
-    public void Rotate()
-    {
-        //Sets Blend float to Rotate
-        anim.SetFloat("Blend", 0);
-    }
-
-    public void Blend()
-    {
-        //Sets Blend float to Blend
-        anim.SetFloat("Blend", 0.5f);
+        //Sets Blend value For animation
+        anim.SetFloat("Blend", Blender.value);
     }
 }
